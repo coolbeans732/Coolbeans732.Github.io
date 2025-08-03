@@ -1,91 +1,33 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CoolBeans Faith</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    section {
-      padding: 60px 20px;
-    }
-  </style>
 </head>
 <body>
   <header>
     <h1>CoolBeans Faith</h1>
     <nav>
-      <a href="#home">Home</a>
-      <a href="#prayer-wall">Prayer Wall</a>
-      <a href="#daily-verse">Daily Verse</a>
-      <a href="#devotionals">Devotionals</a>
-      <a href="#testimonies">Testimonies</a>
-      <a href="#resources">Resources</a>
-      <a href="#about">About</a>
+      <a href="index.html">Home</a>
+      <a href="dailyverse.html">Daily Verse</a>
+      <a href="devotionals.html">Devotionals</a>
+      <a href="prayer.html">Prayer Wall</a>
+      <a href="resources.html">Resources</a>
+      <a href="testimonies.html">Testimonies</a>
+      <a href="about.html">About</a>
     </nav>
-  </header>  <main>
-    <section id="home">
-      <h2>Welcome to CoolBeans Faith!</h2>
-      <p>Spreading the Gospel and building a community of prayer.</p>
-    </section><section id="prayer-wall">
-  <h2>Prayer Wall</h2>
-  <form>
-    <label for="name">Name (optional):</label><br />
-    <input type="text" id="name" name="name" /><br /><br />
-    <label for="prayer">Your Prayer:</label><br />
-    <textarea id="prayer" name="prayer" rows="6" cols="40"></textarea><br /><br />
-    <button type="submit">Submit</button>
-  </form>
-  <h3>Community Prayers</h3>
-  <p><em>Coming soon: A list of prayer requests shared by visitors.</em></p>
-</section>
+  </header>
 
-<section id="daily-verse">
-  <h2>Daily Verse</h2>
-  <p>Get inspired with Scripture based on your need.</p>
-  <label for="problem">What are you facing?</label>
-  <input type="text" id="problem" placeholder="e.g., fear, stress" />
-  <button onclick="getVerse()">Find a Verse</button>
-  <p id="verse-output"></p>
-</section>
+  <main>
+    <h2>Welcome to CoolBeans Faith!</h2>
+    <p>Spreading the Gospel and building a community of faith, prayer, and encouragement. Explore daily verses, devotionals, and real stories from people just like you.</p>
+  </main>
 
-<section id="devotionals">
-  <h2>Devotionals</h2>
-  <p>Daily devotions to encourage and challenge your walk with Christ. Devotionals will be updated weekly with real-life faith reflections.</p>
-</section>
-
-<section id="testimonies">
-  <h2>Testimonies</h2>
-  <p>Read powerful stories from believers around the world sharing what God has done in their lives.</p>
-</section>
-
-<section id="resources">
-  <h2>Resources</h2>
-  <p>Helpful books, apps, study guides, and websites to grow deeper in faith. Resources will be continually added!</p>
-</section>
-
-<section id="about">
-  <h2>About CoolBeans Faith</h2>
-  <p>We’re a digital ministry helping others connect with Christ, spread the Word, and pray together as one body.</p>
-</section>
-
-  </main>  <footer>
-    <p>&copy; 2025 CoolBeans</p>
-  </footer>  <script>
-    function getVerse() {
-      const input = document.getElementById("problem").value.toLowerCase();
-      const output = document.getElementById("verse-output");
-      const verses = {
-        fear: "Isaiah 41:10 — 'Do not fear, for I am with you.'",
-        stress: "Philippians 4:6 — 'Do not be anxious about anything.'",
-        anger: "James 1:19 — 'Be quick to listen, slow to speak, and slow to become angry.'",
-        sadness: "Psalm 34:18 — 'The Lord is close to the brokenhearted.'",
-        doubt: "Proverbs 3:5 — 'Trust in the Lord with all your heart.'"
-      };
-      output.textContent = verses[input] || "Sorry, we don't have a verse for that yet — but God does! Try a different word.";
-    }
-  </script></body>
-  </html>
+  <footer>
+    <p>&copy; 2025 CoolBeans Faith</p>
+  </footer>
+</body>
+</html>
