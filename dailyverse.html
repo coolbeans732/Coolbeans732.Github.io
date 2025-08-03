@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Daily Verse - CoolBeans Faith</title>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -14,19 +13,17 @@
       <a href="index.html">Home</a>
       <a href="prayer.html">Prayer Wall</a>
       <a href="dailyverse.html">Daily Verse</a>
-      <a href="about.html">About</a>
-      <a href="testimonies.html">Testimonies</a>
-      <a href="devotionals.html">Devotionals</a>
-      <a href="resources.html">Resources</a>
     </nav>
   </header>
 
   <main>
-    <h2>Find a Verse</h2>
-    <p>Type your need or feeling (e.g. fear, hope):</p>
-    <input type="text" id="topic" />
-    <button onclick="findVerse()">Find Verse</button>
-    <p id="verseResult"></p>
+    <h2>Find a Verse for Your Situation</h2>
+    <p>Type a feeling or problem (like "fear", "loneliness", "hope"):</p>
+    
+    <input type="text" id="topicInput" placeholder="e.g., anxiety" />
+    <button onclick="findVerse()">Get Verse</button>
+
+    <div id="verseResult" style="margin-top: 20px;"></div>
   </main>
 
   <footer>
@@ -34,18 +31,25 @@
   </footer>
 
   <script>
+    const verses = {
+      anxiety: "Philippians 4:6-7 – Do not be anxious about anything...",
+      fear: "Isaiah 41:10 – Do not fear, for I am with you...",
+      loneliness: "Deuteronomy 31:6 – He will never leave you nor forsake you.",
+      hope: "Romans 15:13 – May the God of hope fill you with all joy and peace...",
+      sadness: "Psalm 34:18 – The Lord is close to the brokenhearted...",
+    };
+
     function findVerse() {
-      const topic = document.getElementById("topic").value.toLowerCase();
-      const verses = {
-        fear: "Isaiah 41:10 – 'Fear not, for I am with you...'",
-        hope: "Jeremiah 29:11 – 'For I know the plans I have for you...'",
-        forgiveness: "1 John 1:9 – 'If we confess our sins, He is faithful...'",
-        anger: "Proverbs 15:1 – 'A gentle answer turns away wrath...'",
-        peace: "Philippians 4:7 – 'The peace of God... will guard your hearts...'"
-      };
-      const result = verses[topic] || "Sorry, no verse found for that topic yet.";
-      document.getElementById("verseResult").textContent = result;
+      const topic = document.getElementById('topicInput').value.toLowerCase();
+      const result = verses[topic];
+
+      const output = document.getElementById('verseResult');
+      if (result) {
+        output.innerHTML = `<strong>Verse for "${topic}":</strong><br>${result}`;
+      } else {
+        output.innerHTML = `Sorry, no verse found for "${topic}". Try something like: anxiety, fear, loneliness, hope, or sadness.`;
+      }
     }
   </script>
 </body>
-  </html>
+</html>
