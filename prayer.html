@@ -1,25 +1,39 @@
-body {
-  font-family: 'Open Sans', sans-serif;
-  background-color: #f0f8ff;
-  color: #333;
-  margin: 0;
-  padding: 0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prayer Wall - CoolBeans Faith</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Prayer Wall</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="prayer.html">Prayer Wall</a>
+    </nav>
+  </header>
 
-header {
-  background-color: #0044cc;
-  color: white;
-  padding: 1em;
-  text-align: center;
-}
+  <main>
+    <h2>Leave a Prayer</h2>
+    <form>
+      <label for="name">Name (optional):</label><br />
+      <input type="text" id="name" name="name" /><br /><br />
 
-nav a {
-  margin: 0 10px;
-  color: white;
-  text-decoration: none;
-}
+      <label for="prayer">Your Prayer:</label><br />
+      <textarea id="prayer" name="prayer" rows="6" cols="40"></textarea><br /><br />
 
-main {
-  padding: 2em;
-  text-align: center;
-}
+      <button type="submit">Submit</button>
+    </form>
+
+    <h2>Community Prayers</h2>
+    <p><em>Coming soon: A list of prayer requests shared by visitors.</em></p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 CoolBeans</p>
+  </footer>
+</body>
+  </html>
