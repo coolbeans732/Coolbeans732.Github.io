@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device- initial-scale=1.0" /><base href="/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Daily Verse - CoolBeans Faith</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>Daily Verse</h1>
+    <h1>CoolBeans Faith</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="prayer.html">Prayer Wall</a>
@@ -20,37 +20,38 @@
   </header>
 
   <main>
-    <h2>Find a Verse for Your Situation</h2>
-    <p>Type a feeling or need (e.g., "anxiety", "hope", "loneliness"):</p>
+    <h2>Daily Verse Finder</h2>
+    <p>Feeling something deeply? Type a feeling or need — like <em>"anxiety"</em>, <em>"hope"</em>, or <em>"fear"</em> — and get a Bible verse for it.</p>
 
-    <input type="text" id="topicInput" placeholder="e.g., fear" />
+    <input type="text" id="topicInput" placeholder="e.g., sadness, loneliness, peace" />
     <button onclick="findVerse()">Get Verse</button>
 
     <div id="verseResult" style="margin-top: 20px;"></div>
   </main>
 
   <footer>
-    <p>&copy; 2025 CoolBeans — <a href="https://www.youtube.com/@Archie-67-67" target="_blank">Visit our YouTube</a></p>
+    <p>&copy; 2025 CoolBeans | <a href="https://www.youtube.com/@Archie-67-67" target="_blank">Visit our YouTube Channel</a></p>
   </footer>
 
   <script>
     const verses = {
       anxiety: "Philippians 4:6-7 – Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.",
       fear: "Isaiah 41:10 – So do not fear, for I am with you; do not be dismayed, for I am your God.",
-      loneliness: "Deuteronomy 31:6 – Be strong and courageous. Do not be afraid or terrified... for the Lord your God goes with you.",
+      loneliness: "Deuteronomy 31:6 – Be strong and courageous... the Lord your God goes with you; he will never leave you nor forsake you.",
       hope: "Romans 15:13 – May the God of hope fill you with all joy and peace as you trust in him.",
       sadness: "Psalm 34:18 – The Lord is close to the brokenhearted and saves those who are crushed in spirit.",
+      peace: "John 14:27 – Peace I leave with you; my peace I give you. Do not let your hearts be troubled and do not be afraid.",
     };
 
     function findVerse() {
-      const topic = document.getElementById('topicInput').value.toLowerCase();
-      const verse = verses[topic];
-      const output = document.getElementById('verseResult');
+      const topic = document.getElementById('topicInput').value.toLowerCase().trim();
+      const result = verses[topic];
 
-      if (verse) {
-        output.innerHTML = `<strong>Verse for "${topic}":</strong><br>${verse}`;
+      const output = document.getElementById('verseResult');
+      if (result) {
+        output.innerHTML = `<strong>Verse for "${topic}":</strong><br>${result}`;
       } else {
-        output.innerHTML = `Sorry, no verse found for "${topic}". Try topics like: anxiety, fear, hope, loneliness, or sadness.`;
+        output.innerHTML = `Sorry, no verse found for "${topic}". Try: anxiety, fear, loneliness, hope, sadness, or peace.`;
       }
     }
   </script>
