@@ -1,18 +1,11 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Daily Verse - CoolBeans Faith</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    #verse-box {
-      margin-top: 20px;
-      padding: 15px;
-      background-color: #e6f0ff;
-      border-left: 4px solid #1a73e8;
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -20,33 +13,39 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="prayer.html">Prayer Wall</a>
-      <a href="daily.html">Daily Verse</a>
+      <a href="dailyverse.html">Daily Verse</a>
+      <a href="about.html">About</a>
+      <a href="testimonies.html">Testimonies</a>
+      <a href="devotionals.html">Devotionals</a>
+      <a href="resources.html">Resources</a>
     </nav>
-  </header>  <main>
-    <h2>What are you feeling?</h2>
-    <p>Type in a word like "fear", "stress", "lonely" and get a verse to comfort and guide you.</p><input type="text" id="keyword" placeholder="Type your word here..." />
-<button onclick="findVerse()">Find My Verse</button>
+  </header>
 
-<div id="verse-box"></div>
+  <main>
+    <h2>Find a Verse</h2>
+    <p>Type your need or feeling (e.g. fear, hope):</p>
+    <input type="text" id="topic" />
+    <button onclick="findVerse()">Find Verse</button>
+    <p id="verseResult"></p>
+  </main>
 
-  </main>  <footer>
+  <footer>
     <p>&copy; 2025 CoolBeans</p>
-  </footer>  <script>
-    const verses = {
-      fear: "Isaiah 41:10 - 'Do not fear, for I am with you.'",
-      anxiety: "Philippians 4:6 - 'Do not be anxious about anything.'",
-      lonely: "Deuteronomy 31:6 - 'The Lord your God goes with you; He will never leave you.'",
-      anger: "James 1:19 - 'Be slow to anger.'",
-      forgiveness: "Ephesians 4:32 - 'Be kind and compassionate, forgiving one another.'",
-      sadness: "Psalm 34:18 - 'The Lord is close to the brokenhearted.'",
-      hope: "Jeremiah 29:11 - 'For I know the plans I have for you, declares the Lord.'",
-      stress: "Matthew 11:28 - 'Come to me, all who are weary and burdened.'"
-    };
+  </footer>
 
+  <script>
     function findVerse() {
-      const input = document.getElementById("keyword").value.toLowerCase();
-      const verseBox = document.getElementById("verse-box");
-      verseBox.innerHTML = verses[input] || "<em>No verse found for that word. Try another.</em>";
+      const topic = document.getElementById("topic").value.toLowerCase();
+      const verses = {
+        fear: "Isaiah 41:10 – 'Fear not, for I am with you...'",
+        hope: "Jeremiah 29:11 – 'For I know the plans I have for you...'",
+        forgiveness: "1 John 1:9 – 'If we confess our sins, He is faithful...'",
+        anger: "Proverbs 15:1 – 'A gentle answer turns away wrath...'",
+        peace: "Philippians 4:7 – 'The peace of God... will guard your hearts...'"
+      };
+      const result = verses[topic] || "Sorry, no verse found for that topic yet.";
+      document.getElementById("verseResult").textContent = result;
     }
-  </script></body>
-</html>
+  </script>
+</body>
+  </html>
