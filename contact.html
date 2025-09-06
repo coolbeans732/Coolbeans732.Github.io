@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Devotionals</title>
+  <title>Contact</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -21,43 +21,12 @@
     </ul>
   </nav>
 
-  <!-- Devotionals Feed -->
+  <!-- Contact Section -->
   <main class="card-container">
     <div class="card">
-      <h2>🌞 September 6</h2>
-      <p><strong>Matthew 5:16</strong><br>"Let your light so shine before men, that they may see your good works and glorify your Father in heaven."</p>
-      <p>Today, be a flashlight in someone’s fog. Even a small kindness can guide someone home.</p>
-    </div>
-
-    <div class="card">
-      <h2>🌿 September 5</h2>
-      <p><strong>1 Peter 5:7</strong><br>"Cast all your anxiety on Him because He cares for you."</p>
-      <p>God doesn’t just listen—He leans in. Let Him carry what’s too heavy today.</p>
-    </div>
-
-    <div class="card">
-      <h2>🕊️ September 4</h2>
-      <p><strong>Psalm 46:1</strong><br>"God is our refuge and strength, an ever-present help in trouble."</p>
-      <p>Even when the world shakes, He stays steady. Lean into that refuge today.</p>
-    </div>
-
-    <div class="card">
-      <h2>🔥 September 3</h2>
-      <p><strong>Romans 12:11</strong><br>"Never be lacking in zeal, but keep your spiritual fervor, serving the Lord."</p>
-      <p>Let your passion for God be the spark that lights someone else's fire.</p>
-    </div>
-
-    <!-- Prayer Wall -->
-    <div class="card">
-      <h2>🙏 Prayer Wall</h2>
-      <p>Type in what you're feeling, and receive a prayer just for you. This wall is a safe space—your heart matters here.</p>
-
-      <form id="prayerForm">
-        <textarea id="feelingInput" placeholder="Type your feeling or situation..." required></textarea>
-        <button type="submit">Receive Prayer</button>
-      </form>
-
-      <div id="prayerResponse" class="card" style="display:none;"></div>
+      <h2>📬 Reach Out</h2>
+      <p>If you're feeling something heavy, hopeful, or just want to share a thought, click below to send me a private email. I’ll read it and reply with a prayer just for you.</p>
+      <a href="mailto:archiepettit991@gmail.com" class="email-button">Send a Private Message</a>
     </div>
   </main>
 
@@ -66,31 +35,5 @@
     <p>Made with faith and laughter by Archie ✝️</p>
   </footer>
 
-  <!-- Prayer Wall Script -->
-  <script>
-    const form = document.getElementById('prayerForm');
-    const input = document.getElementById('feelingInput');
-    const response = document.getElementById('prayerResponse');
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const feeling = input.value.toLowerCase();
-      let prayer = "Lord, You know every heart. Bring peace, strength, and hope to this visitor today.";
-
-      if (feeling.includes("anxious")) {
-        prayer = "God of comfort, calm this anxious heart. Let peace flow like a river and remind them they are never alone.";
-      } else if (feeling.includes("happy")) {
-        prayer = "Lord, thank You for joy! May it overflow and bless others today.";
-      } else if (feeling.includes("lost")) {
-        prayer = "Father, guide this soul. Shine Your light on the path ahead and whisper Your love into their heart.";
-      } else if (feeling.includes("tired")) {
-        prayer = "Lord, renew this weary spirit. Let rest and grace wash over them like a gentle rain.";
-      }
-
-      response.innerHTML = `<h2>Your Prayer</h2><p>${prayer}</p>`;
-      response.style.display = "block";
-    });
-  </script>
-
 </body>
-  </html>
+</html>
