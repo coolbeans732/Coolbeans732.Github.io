@@ -46,6 +46,19 @@
       <p><strong>Romans 12:11</strong><br>"Never be lacking in zeal, but keep your spiritual fervor, serving the Lord."</p>
       <p>Let your passion for God be the spark that lights someone else's fire.</p>
     </div>
+
+    <!-- Prayer Wall Section -->
+    <div class="card">
+      <h2>🙏 Prayer Wall</h2>
+      <p>Type in what you're feeling, and receive a prayer just for you. This wall is a safe space—your heart matters here.</p>
+
+      <form id="prayerForm">
+        <textarea id="feelingInput" placeholder="Type your feeling or situation..." required></textarea>
+        <button type="submit">Receive Prayer</button>
+      </form>
+
+      <div id="prayerResponse" class="card" style="display:none;"></div>
+    </div>
   </main>
 
   <!-- Footer -->
@@ -53,5 +66,33 @@
     <p>Made with faith and laughter by Archie ✝️</p>
   </footer>
 
+  <!-- Prayer Wall Script -->
+  <script>
+    const form = document.getElementById('prayerForm');
+    const input = document.getElementById('feelingInput');
+    const response = document.getElementById('prayerResponse');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const feeling = input.value.toLowerCase();
+      let prayer = "Lord, You know every heart. Bring peace, strength, and hope to this visitor today.";
+
+      if (feeling.includes("anxious")) {
+        prayer = "God of comfort, calm this anxious heart. Let peace flow like a river and remind them they are never alone.";
+      } else if (feeling.includes("happy")) {
+        prayer = "Lord, thank You for joy! May it overflow and bless others today.";
+      } else if (feeling.includes("lost")) {
+        prayer = "Father, guide this soul. Shine Your light on the path ahead and whisper Your love into their heart.";
+      } else if (feeling.includes("tired")) {
+        prayer = "Lord, renew this weary spirit. Let rest and grace wash over them like a gentle rain.";
+      } else if (feeling.includes("grateful")) {
+        prayer = "Thank You, Lord, for this grateful heart. May their joy be contagious and their spirit lifted.";
+      }
+
+      response.innerHTML = `<h2>Your Prayer</h2><p>${prayer}</p>`;
+      response.style.display = "block";
+    });
+  </script>
+
 </body>
-  </html>
+          </html>
