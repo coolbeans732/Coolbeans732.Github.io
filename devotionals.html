@@ -46,8 +46,10 @@
       <p><strong>Romans 12:11</strong><br>"Never be lacking in zeal, but keep your spiritual fervor, serving the Lord."</p>
       <p>Let your passion for God be the spark that lights someone else's fire.</p>
     </div>
+  </main>
 
-    <!-- Prayer Wall Section -->
+  <!-- Prayer Wall Section -->
+  <section class="card-container">
     <div class="card">
       <h2>🙏 Prayer Wall</h2>
       <p>Type in what you're feeling, and receive a prayer just for you. This wall is a safe space—your heart matters here.</p>
@@ -57,9 +59,9 @@
         <button type="submit">Receive Prayer</button>
       </form>
 
-      <div id="prayerResponse" class="card" style="display:none;"></div>
+      <div id="prayerResponse" style="display:none; margin-top: 20px;"></div>
     </div>
-  </main>
+  </section>
 
   <!-- Footer -->
   <footer>
@@ -89,10 +91,10 @@
         prayer = "Thank You, Lord, for this grateful heart. May their joy be contagious and their spirit lifted.";
       }
 
-      response.innerHTML = `<h2>Your Prayer</h2><p>${prayer}</p>`;
+      response.innerHTML = `<div class="card"><h2>Your Prayer</h2><p>${prayer}</p></div>`;
       response.style.display = "block";
     });
   </script>
 
 </body>
-          </html>
+</html>
